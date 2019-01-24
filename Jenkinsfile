@@ -14,4 +14,4 @@ node {
         sh 'mvn clean'
       }
     }
-}
+
