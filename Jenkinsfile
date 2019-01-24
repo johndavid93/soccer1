@@ -9,4 +9,9 @@ node {
           
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
+ stage ('limpiar') {
+   
+        sh 'mvn clean'
+      }
+    }
 }
