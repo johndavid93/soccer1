@@ -14,12 +14,12 @@ stage ('limpiar') {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
  
-node {
+ stage (deploy UCD) {
    step([$class: 'UCDeployPublisher',
         siteName: 'local',
         component: [
             $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
-            componentName: 'Jenkins',
+            componentName: 'Jenkins John',
             createComponent: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
                 componentTemplate: '',
@@ -37,6 +37,7 @@ node {
             ]
         ]
     ])
+ }
 }
-    }
+    
 
