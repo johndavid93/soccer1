@@ -12,9 +12,8 @@ stage ('limpiar') {
  stage ('Build') {
           
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
-            }
- 
- stage (deploy UCD) {
+            } 
+ stage ('deploy UCD') {
    step([$class: 'UCDeployPublisher',
         siteName: 'local',
         component: [
