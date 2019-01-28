@@ -1,9 +1,5 @@
 node {
- 
-stage ('limpiar') {
-   
-        sh 'mvn clean'
-      }
+
  
   stage('Preparation') { // for display purposes
      // Get some code from a GitHub repository
